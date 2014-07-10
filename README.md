@@ -1,6 +1,6 @@
-# seneca-util
+# seneca-echo
 
-### Seneca utility plugin. 
+### Seneca echo plugin. 
 
 This plugin is included with the main seneca module.
 
