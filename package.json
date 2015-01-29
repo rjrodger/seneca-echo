@@ -1,10 +1,11 @@
 {
   "name": "seneca-echo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Seneca echo plugin.",
   "main": "echo.js",
   "scripts": {
-    "test": "./test.sh"
+    "test": "./test.sh",
+    "build": "./build.sh"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,11 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "underscore": "~1.6.0"
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
+    "docco": "~0.6.3",
+    "jshint": "~2.6.0",
     "mocha": "~1.20.1"
   },
   "files": [

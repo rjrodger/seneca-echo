@@ -1,43 +1,49 @@
-/* Copyright (c) 2010-2014 Richard Rodger */
-
+/* Copyright (c) 2010-2015 Richard Rodger, MIT License */
+/* jshint node:true, asi:true, eqnull:true */
 "use strict"
 
 
-var _ = require('underscore')
+var _ = require('lodash')
 
 
 module.exports = function echo( options ) {
 
-  this.add({role:'echo'},function(args,cb){
-    var exclude = _.extend({role:1},options.exclude||{})
+  options = this.util.deepextend({
+    web:     true,
+    exclude: {role:true},
+    inject:  {},
+    delay:   0,
+  },options)
+
+
+  this.add({role:'echo'},function(args,done){
     var out = _.omit(
-      _.extend(args,options.inject||{}),
-      _.filter(_.keys(args),function(n){return n.match(/\$$/)||exclude[n]})
+      _.extend({},args,options.inject),
+      _.keys(options.exclude)
     )
 
-    function finish() { cb(null,out) }
-
-    if( options.delay && _.isNumber( options.delay ) ) {
-      setTimeout(finish,options.delay)
-    }
-    else finish();
+    setTimeout(function(){
+      done(null,out)
+    },options.delay)
   })
 
 
-  this.act({role:'web',use:function(req,res,next){
-    if( 0 == req.url.indexOf('/echo') ) {
-      res.writeHead(200)
-      var content = req.url
+  if( options.web ) {
+    // assumes express or connect app
+    this.act({role:'web',use:function(req,res,next){
+      if( 0 === req.url.indexOf('/echo') ) {
+        res.writeHead(200)
+        var content = req.url
 
-      // use connect.json() middleware to accept JSON data
-      if( req.body ) {
-        content = _.isObject(req.body) ? JSON.stringify(req.body) : ''+req.body
-      } 
-      res.end(content)
-    }
-    else next();
-  }})
-
+        // use body-parser json middleware to accept JSON data
+        if( req.body ) {
+          content = _.isObject(req.body) ? JSON.stringify(req.body) : ''+req.body
+        } 
+        res.end(content)
+      }
+      else next();
+    }})
+  }
 
   return { name:'echo' }
 }
