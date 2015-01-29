@@ -20,7 +20,7 @@ Tested on: Node 0.10.36, Seneca 0.6.0
 
 [![Build Status](https://travis-ci.org/rjrodger/seneca-echo.png?branch=master)](https://travis-ci.org/rjrodger/seneca-echo)
 
-[Annotated Source](http://rjrodger.github.io/seneca-echo/doc/seneca-echo.html)
+[Annotated Source](http://rjrodger.github.io/seneca-echo/doc/echo.html)
 
 [![Gitter chat](https://badges.gitter.im/rjrodger/seneca-echo.png)](https://gitter.im/rjrodger/seneca-echo)
 
