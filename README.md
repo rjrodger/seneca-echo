@@ -1,5 +1,6 @@
 # seneca-echo - a [Seneca](http://senecajs.org) plugin
 
+
 ## Seneca echo plugin. 
 
 This Seneca plugin provides a simple echo service. It is used as a
@@ -9,23 +10,48 @@ create your own plugins!
 For a gentle introduction to Seneca itself, see the
 [senecajs.org](http://senecajs.org) site.
 
-## Support
 
-If you're using this module, feel free to contact me on twitter if you
-have any questions! :) [@rjrodger](http://twitter.com/rjrodger)
+### Support
 
-Current Version: 0.2.0
+Current Version: 0.3.0
 
-Tested on: Node 0.10.36, Seneca 0.6.0
+Tested on: [Seneca](/rjrodger/seneca) 0.6.2
 
 [![Build Status](https://travis-ci.org/rjrodger/seneca-echo.png?branch=master)](https://travis-ci.org/rjrodger/seneca-echo)
 
 [Annotated Source](http://rjrodger.github.io/seneca-echo/doc/echo.html)
 
-[![Gitter chat](https://badges.gitter.im/rjrodger/seneca-echo.png)](https://gitter.im/rjrodger/seneca-echo)
+If you're using this module, and need help, you can:
+
+   * Post a [github issue](/rjrodger/seneca-echo/issues),
+   * Tweet to [@senecajs](http://twitter.com/senecajs),
+   * Ask on the [![Gitter chat](https://badges.gitter.im/rjrodger/seneca-echo.png)](https://gitter.im/rjrodger/seneca-echo).
 
 
+### Install
+
+```sh
+npm install seneca-echo
+```
 
 
+### Quick example
+
+```
+require('seneca')()
+  .use('echo')  // the seneca- prefix is optional
+  .act('role:echo,foo:bar', function(err,out) {
+    console.log(out.foo) // prints bar
+  })
+```
+
+
+### Development & Test
+
+To test, use:
+
+```sh
+npm test
+```
 
 

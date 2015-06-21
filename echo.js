@@ -22,12 +22,14 @@ module.exports = function echo( options ) {
       _.keys(options.exclude)
     )
 
+    // an artifical delay
     setTimeout(function(){
       done(null,out)
     },options.delay)
   })
 
 
+  // optionally create a web API
   if( options.web ) {
     // assumes express or connect app
     this.act({role:'web',use:function(req,res,next){
