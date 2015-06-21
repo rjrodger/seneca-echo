@@ -15,7 +15,7 @@ For a gentle introduction to Seneca itself, see the
 
 Current Version: 0.3.0
 
-Tested on: [Seneca](/rjrodger/seneca) 0.6.2
+Tested on: [Seneca](github.com/rjrodger/seneca) 0.6.2
 
 [![Build Status](https://travis-ci.org/rjrodger/seneca-echo.png?branch=master)](https://travis-ci.org/rjrodger/seneca-echo)
 
@@ -23,7 +23,7 @@ Tested on: [Seneca](/rjrodger/seneca) 0.6.2
 
 If you're using this module, and need help, you can:
 
-   * Post a [github issue](/rjrodger/seneca-echo/issues),
+   * Post a [github issue](github.com/rjrodger/seneca-echo/issues),
    * Tweet to [@senecajs](http://twitter.com/senecajs),
    * Ask on the [![Gitter chat](https://badges.gitter.im/rjrodger/seneca-echo.png)](https://gitter.im/rjrodger/seneca-echo).
 
