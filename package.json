@@ -27,6 +27,7 @@
     "lodash": "2.4.2"
   },
   "devDependencies": {
+    "seneca": "plugin",
     "docco": "0.7.0",
     "jshint": "2.8.0",
     "mocha": "2.1.0"

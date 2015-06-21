@@ -19,6 +19,8 @@ Tested on: [Seneca](//github.com/rjrodger/seneca) 0.6.2
 
 [![Build Status](https://travis-ci.org/rjrodger/seneca-echo.png?branch=master)](https://travis-ci.org/rjrodger/seneca-echo)
 
+Built and tested against versions: `0.10, 0.11, 0.12, iojs`
+
 [Annotated Source](http://rjrodger.github.io/seneca-echo/doc/echo.html)
 
 If you're using this module, and need help, you can:
